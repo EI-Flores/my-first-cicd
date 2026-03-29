@@ -46,3 +46,9 @@ The project includes a GitHub Action (.github/workflows/python-tests.yml) that t
 
 ---
 
+## 🐳 Running with Docker
+
+If you have Docker installed, you can run the entire test suite without setting up a local Python environment:
+
+```bash
+docker compose up --build

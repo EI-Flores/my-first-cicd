@@ -1,0 +1,6 @@
+services:
+  test-runner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ci_calculator_test
