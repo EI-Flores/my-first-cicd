@@ -1,0 +1,25 @@
+name: Python CI Check
+
+on: [push] # Se activa cada vez que haces un 'git push'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest # GitHub nos presta una computadora con Linux
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4 # Copia tu código a la máquina de GitHub
+
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12' # Usamos una estable (la 3.14 es muy reciente/experimental)
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+
+    - name: Run tests with pytest
+      run: |
+        pytest
