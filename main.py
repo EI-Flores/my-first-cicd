@@ -1,6 +1,7 @@
-from calculator import add, subtract
+from calculator import add, save_result
 
 if __name__ == "__main__":
-    print("--- Calculadora Simple ---")
-    resultado = add(10, 20)
-    print(f"La suma de 10 + 20 es: {resultado}")
+    res = add(10, 5)
+    print(f"Adding 10 + 5 = {res}")
+    save_result(res)
+    print("Result saved to results.txt")

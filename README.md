@@ -50,5 +50,12 @@ The project includes a GitHub Action (.github/workflows/python-tests.yml) that t
 
 If you have Docker installed, you can run the entire test suite without setting up a local Python environment:
 
+    ```bash
+    docker compose up --build
+
+## 💾 Data Persistence (Volumes)
+The project demonstrates Docker Volumes by mapping the local directory to the container. 
+When running the application, results are persisted in `results.txt` on the host machine.
+
 ```bash
-docker compose up --build
+docker compose run test-runner python main.py
